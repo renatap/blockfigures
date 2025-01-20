@@ -146,17 +146,18 @@ function setup() {
   
     //carinha
     push();
-    stroke(0);
-    strokeWeight(2);
+    stroke(77,0,38);
+    strokeWeight(3);
     noFill();
+    var faceHeight = height - block1Height - block2Height - block3Size / 2.5 + difference;
     translate(
       width / 2,
-      height - block1Height - block2Height - block3Size / 2.5 + difference
+      faceHeight
     );
     beginShape();
     rotate(45);
     for (let i = 0; i < 90; i++) {
-      var r = 10;
+      var r = faceHeight*0.1;
       var x = r * cos(i);
       var y = r * sin(i);
       vertex(x, y);
@@ -165,11 +166,15 @@ function setup() {
     endShape();
     rotate(-45);
     fill(0);
-    ellipse(-15, -17, 3, 5);
-    ellipse(15, -17, 3, 5);
+    ellipse(-faceHeight*0.1, -faceHeight*0.07, faceHeight*0.02, faceHeight*0.02);
+    ellipse(faceHeight*0.1, -faceHeight*0.07, faceHeight*0.02, faceHeight*0.02);
     noStroke();
+    fill(241, 78, 79, 60)
+    ellipse(faceHeight*0.12, -faceHeight*0.02, faceHeight*0.06, faceHeight*0.04);
+    ellipse(-faceHeight*0.12, -faceHeight*0.02, faceHeight*0.06, faceHeight*0.04);
     fill(241, 78, 79)
-    circle(0,-3,10)
+    circle(0,0,faceHeight*0.05)
+    
     pop();
   
     
